@@ -1,0 +1,43 @@
+<!-- Esta implementacion no es factible, la idea de hacer un link import directo 
+en el HTML principal no es viable -->
+
+<html>
+  <template id="sellBtn">
+    <style>
+      :host {
+        --primary: #0047ab;
+        --primary-h: #0247a7;
+        --secondary: #0096c7;
+        --secondary-h: #0285b1;
+        --space: 1.5rem;
+      }
+      .btn {
+        background-color: var(--primary);
+        border: 0;
+        border-radius: 8px;
+        color: white;
+        padding: var(--space);
+        text-transform: uppercase;
+      }
+    </style>
+    <button class="btn">--shell-button</button>
+  </template>
+
+  <script>
+    class SellButton extends HTMLElement {
+      constructor() {
+        super();
+        this.importDocument = document.currentScript.ownerDocument;
+      }
+
+      connectedCallback() {
+        const shadowRoot = this.attachShadow({ mode: 'open' });
+        const t = this.importDocument.querySelector('#btn'); // template
+        const instance = t.content.cloneNode(true);
+        shadowRoot.appendChild(instance);
+      }
+    }
+
+    window.customElements.define('sell-button', SellButton);
+  </script>
+</html>

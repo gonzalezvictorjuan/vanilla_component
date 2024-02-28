@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla Component</title>
+    <!-- <link rel="import" href="./components/sell-button.html" /> NO ES VIABLE -->
+
+    <script src="./components/holaMundo.js"></script>
+    <script type="module" src="./components/holaMundo2.js"></script>
+    <script type="module" src="./components/holaMundo3.js"></script>
+    <script type="module" src="./components/counter2.js"></script>
+    <script src="./components/counter.V1.js"></script>
+
+    <style>
+      h1 {
+        color: red;
+      }
+      h1:hover {
+        color: orange;
+      }
+      h2 {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <my-counter count="10"></my-counter> -->
+    <!-- <my-counter2 count="100"></my-counter2> -->
+    <!-- <hola-mundo name="victor" surname="gonzalez" aaa="aaa"></hola-mundo> -->
+    <!-- <hola-mundo2 name="victor" surname="gonzalez" aaa="aaa">
+      <my-counter2 count="100"></my-counter2>
+    </hola-mundo2> -->
+    <hola-mundo3 name="victor">
+      <div>
+        <h2>petuto</h2>
+        <my-counter2 count="100"></my-counter2>
+      </div>
+    </hola-mundo3>
+    <script>
+      document.addEventListener('eIncrement', (e) => {
+        console.log(e.detail);
+      });
+    </script>
+  </body>
+</html>

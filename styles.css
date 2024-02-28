@@ -1,0 +1,13 @@
+/* styles.css */
+:root {
+  --primary-color: yellow;
+  --secondary-color: green;
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+p {
+  color: var(--secondary-color);
+}
